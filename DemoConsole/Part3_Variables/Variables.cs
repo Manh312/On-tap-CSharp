@@ -1,13 +1,13 @@
-﻿namespace DemoConsole.Part3_Variables;
+﻿
+namespace DemoConsole.Part3_Variables;
 
-public static class Variables
+public class Variables
 {
-    public static void Run()
+    public void Run()
     {
-        int age = 23;
-        double height = 1.65;
-        string name = "Mạnh";
-
-        Console.WriteLine($"Name: {name}, Age: {age}, Height: {height}m");
+        Console.WriteLine("=== 3. Variables ===");
+        VariablesDemo.Run();
+        ConstantsDemo.Run();
+        ScopeDemo.Run();
     }
 }
