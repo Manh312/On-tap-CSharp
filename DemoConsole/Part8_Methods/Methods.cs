@@ -45,13 +45,7 @@ public class Methods
     static void PrintMessage()
     {
         Console.WriteLine("Đây là void method!");
-    }
-
-    // Kiểu trả về
-    static int Add(int x, int y)
-    {
-        return x + y;
-    }
+    }    
 
     // 2. ref (tham chiếu, thay đổi giá trị gốc)
     static void ModifyRef(ref int value)
@@ -83,6 +77,10 @@ public class Methods
     }
 
     // 6. Overloading (nạp chồng)
+    static int Add(int x, int y)
+    {
+        return x + y;
+    }
     static int Add(int x, int y, int z)
     {
         return x + y + z;
