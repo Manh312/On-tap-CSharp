@@ -18,7 +18,11 @@ Log.Logger = new LoggerConfiguration()
 builder.Host.UseSerilog();
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null; // Giữ nguyên tên thuộc tính
+    });
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
@@ -42,6 +46,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRequestPipeline();
 app.UseAuthorization();
+app.UseSerilogRequestLogging();
 app.MapControllers();
 
 app.Run();
